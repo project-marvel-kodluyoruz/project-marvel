@@ -6,7 +6,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
 import firebase from "firebase"
 import "firebase/auth";
 
@@ -23,9 +23,6 @@ firebase.initializeApp(firebaseConfig);
 
 function App() {
   const dispatch = useDispatch()
-  const characterId = "1011334"
-  const [data, setData] = useState([])
-
   useEffect(()=>{
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {

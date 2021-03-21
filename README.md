@@ -19,7 +19,7 @@
 
 ### 5. Start your project
 
-# To contribute the project
+# To contribute to the project
 ### 1. Fork repo
 ### 2. Clone repo from your Github account
 ### 3. Yarn install or npm install

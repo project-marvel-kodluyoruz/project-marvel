@@ -1,0 +1,109 @@
+.register-body{
+    background: url("https://www.nawpic.com/media/2020/marvel-nawpic-2-scaled.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+  .form-container{
+    position: relative;
+    padding-top: 3vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-background{
+    height: 100%;
+    width: 40%;
+    position: relative;
+    top: 50%;
+    transform: skewX(25deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2vh;
+    
+    
+  }
+  .register-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    margin-top:2vh;
+  }
+  .form-background-image{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 5.5vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.85;
+    z-index: -1;
+  }
+  span{
+    display: block;
+    transform: skewX(-25deg);
+    color: white;
+    align-self: flex-start;
+    font-size: x-large;
+  }
+  
+  .register-input{
+    transform: skewX(-25deg);
+    margin-top: 4rem;
+    border: none;
+    outline: none;
+    padding: 1vh;
+    width: 100%;
+    font-size: x-large;
+  
+    &:active{
+      animation-name: vibration;
+      animation-duration: 200ms;
+    }
+  }
+  
+  .register-button{
+    width: 100%;
+    border: none;
+    outline: none;
+    transform: skewX(-25deg);
+    margin-top: 8vh;
+    padding: 1vh;
+    color: white;
+    background-color: #EC1D24;
+    box-shadow: 3px 3px 3px gray;
+    transition: ease-in-out 0.5s all;
+    cursor: pointer;
+    font-size: x-large;
+  
+    &:hover{
+      outline-offset: -5px;
+      outline: 1px solid white;
+    }
+  
+    &:active{
+      box-shadow: none;
+    }
+  }
+  
+  .accordion-button{
+    color:white;
+    position: absolute;
+    top:5px;
+    right: 10px;
+    font-size: xx-large;
+    cursor: pointer;
+  }
+  
+  @keyframes vibration{
+    25% {transform: translateX(10px);}
+    50% {transform: translateX(-10px);}
+    75% {transform: translateX(10px);}
+    1000% {transform: translateX(-10px);}
+  }

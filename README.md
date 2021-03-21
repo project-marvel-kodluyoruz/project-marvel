@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# To use project;
+### 1. Download Project
+### 2. Yarn install or npm install
+### 3. Create an .env file in project file
+### 4. Fill your .env file as given below;
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## .env:
+REACT_APP_API_URL = https://gateway.marvel.com:443/v1/public/
+REACT_APP_PUBLICKEY = <Your marvel public key>
+REACT_APP_PRIVATKEY = <Your marvel private key>
+REACT_APP_TS = 1
 
-## Available Scripts
+REACT_APP_AUTH_API_KEY = <Your firebase API key>
+REACT_APP_AUTH_DOMAIN = <Your firebase domain>
+REACT_APP_PROJECT_ID = <Your firebase project-id>
+REACT_APP_STORAGED_BUCKET = <Your firebase storaged bucket>
+REACT_APP_MESSAGING_SENDER_ID = <Your firebase sender id>
+REACT_APP_AUTH_APP_ID = <Your firebase App id>
 
-In the project directory, you can run:
+### 5. Start your project
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# To contribute the project
+### 1. Fork repo
+### 2. Clone repo from your Github account
+### 3. Create a branch
+### 4. Create an .env file as given above
+### 5. Make a contribute
+### 6. git push repo is in your Github account

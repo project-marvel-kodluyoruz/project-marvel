@@ -26,8 +26,8 @@ function App() {
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      dispatch({type:"SignIn", payload:{userId: user.uid}})
-      console.log(user.uid)
+      dispatch({type:"SignIn", payload:{userId: user}})
+      console.log(user)
     } else {
       dispatch({type:"SignIn", payload:{userId: ""}})
     }

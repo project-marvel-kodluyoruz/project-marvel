@@ -1,6 +1,6 @@
 import './App.scss';
-import { useEffect, useState } from 'react';
 import Register from "./pages/Register/Register"
+import Login from "./pages/Login/Login"
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,22 +23,22 @@ firebase.initializeApp(firebaseConfig);
 
 function App() {
   const dispatch = useDispatch()
-  useEffect(()=>{
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        dispatch({type:"SignIn", payload:{userId: user.uid}})
-      } else {
-        dispatch({type:"SignIn", payload:{userId: ""}})
-      }
-    });
-  },[])
+
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      dispatch({type:"SignIn", payload:{userId: user.uid}})
+      console.log(user.uid)
+    } else {
+      dispatch({type:"SignIn", payload:{userId: ""}})
+    }
+  });
 
   // <button onClick={()=>fetchData("characters", "1011334", "series").then(data=>setData(data))}>Fetch Data</button>
   return (
       <Router>
        <Switch>
           <Route path="/register" component={Register}/>
-          {/* <Route path="/users"/> */}
+          <Route path="/login" component={Login}/>
         </Switch>
       </Router>
   );

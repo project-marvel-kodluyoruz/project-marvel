@@ -22,14 +22,14 @@ export const register = (email, password) =>{
     // ...
   })
   .catch((error) => {
-    var errorMessage = error.message;
-    alert(errorMessage)
+    alert(error.message);
   });
   }
 
   export const logout = () =>{
     firebase.auth().signOut().then(() => {
       // Sign-out successful.
+      console.log("logout")
     }).catch((error) => {
       // An error happened.
     });

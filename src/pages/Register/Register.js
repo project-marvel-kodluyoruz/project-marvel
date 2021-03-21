@@ -5,7 +5,7 @@ import "./Register.scss";
 import { useState } from "react";
 
 const Register = () => {
-  const [appear, setAppear] = useState(true);
+  const [show, setShow] = useState(true);
   let schema = yup.object().shape({
     password: yup
       .string()
@@ -22,7 +22,7 @@ const Register = () => {
     <div className="form-container">
       <div className="form-background">
         <img className="form-background-image" src="https://www.enjpg.com/img/2020/iron-man-8-scaled.jpg" alt="" />
-        <p className="accordion-button" onClick={() => setAppear((s) => !s)}> {appear ? "-" : "+"}</p>
+        <p className="accordion-button" onClick={() => setShow((s) => !s)}> {show ? "-" : "+"}</p>
         <Formik
           initialValues={{ email: "", password: "", confirmPassword: "" }}
           validationSchema={schema}
@@ -41,7 +41,7 @@ const Register = () => {
             isSubmitting,
             /* and other goodies */
           }) =>
-            appear && (
+            show && (
               <form onSubmit={handleSubmit} className="register-form">
                 <input
                   type="email"
@@ -51,7 +51,7 @@ const Register = () => {
                   value={values.email}
                   placeholder="Please enter your email"
                   className="register-input" />
-                <span>{errors.email && touched.email && errors.email}</span>
+                <span className="register-span">{errors.email && touched.email && errors.email}</span>
                 <input
                   type="password"
                   name="password"
@@ -60,7 +60,7 @@ const Register = () => {
                   value={values.password}
                   placeholder="Please enter your password"
                   className="register-input" />
-                <span>{errors.password && touched.password && errors.password}</span>
+                <span className="register-span">{errors.password && touched.password && errors.password}</span>
                 <input
                   type="password"
                   name="confirmPassword"
@@ -69,12 +69,11 @@ const Register = () => {
                   value={values.confirmPassword}
                   placeholder="Please confirm your password"
                   className="register-input" />
-                <span>{errors.confirmPassword && touched.confirmPassword && errors.confirmPassword}</span>
+                <span className="register-span">{errors.confirmPassword && touched.confirmPassword && errors.confirmPassword}</span>
                 <button
                   type="submit"
                   disabled={isSubmitting}
                   className="register-button">Register</button>
-                  
               </form>
             )
           }

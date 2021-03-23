@@ -12,5 +12,4 @@ export default async function fetchData(context, id, detail, limit){
     
     const {data:{data:{results}}} = await axios.get(`${API_URL}/${context}${id ? `/${id}` : ""}${detail ? `/${detail}` : ""}?${auth}&limit=${limit ? limit : 100}`)
     return results
-    // .then((res) => console.log(res.data.data.results))
 }

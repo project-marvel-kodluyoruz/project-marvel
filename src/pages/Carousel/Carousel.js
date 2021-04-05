@@ -2,7 +2,10 @@ import React from 'react'
 
 const Carousel = () => {
     return (
-        <div>hello</div>
+        <div>
+            hello
+            hello
+        </div>
     )
 }
 

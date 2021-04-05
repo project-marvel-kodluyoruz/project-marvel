@@ -9,9 +9,6 @@ const Home = ()=>{
     const [force, setForce] = useState(0)
 
 
-    // asdsadsdfdsf
-    
-
     // useEffect(()=>{
     //     handleGetData().then((data)=>setData(data ? data : []))
     // },[force])

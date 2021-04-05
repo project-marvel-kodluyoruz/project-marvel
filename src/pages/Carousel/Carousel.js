@@ -5,6 +5,8 @@ const Carousel = () => {
         <div>
             hello
             hello
+            hello
+            hello
         </div>
     )
 }

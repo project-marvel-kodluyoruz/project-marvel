@@ -9,7 +9,13 @@ const Home = ()=>{
     const [force, setForce] = useState(0)
 
     // test test
+    // test test
     
+     // test test
+    // test test
+     // test test
+    // test test
+
     // useEffect(()=>{
     //     handleGetData().then((data)=>setData(data ? data : []))
     // },[force])

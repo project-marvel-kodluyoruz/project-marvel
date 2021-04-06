@@ -37,8 +37,8 @@ function App() {
   // <button onClick={()=>fetchData("characters", "1011334", "series").then(data=>setData(data))}>Fetch Data</button>
   return (
     <div className="App">
-      <NavbarComponents/>      
       <Router>
+      <NavbarComponents/>      
        <Switch>
           <Route path="/register" component={Register}/>
           <Route path="/login" component={Login}/>

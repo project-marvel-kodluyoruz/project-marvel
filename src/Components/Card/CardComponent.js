@@ -13,12 +13,11 @@ export default function CardComponent() {
     // const characterNumber = Math.ceil(Math.random() * 100).toString()
 
     useEffect(() => {
-        fetchData("characters", "", "", "100").then(data => {
+        fetchData("characters", "", "", "").then(data => {
             setCharacters(data);
-            console.log(data);
         })
     }, [inputCharacter]);
-
+    console.log(characters)
     return (
         <div className="CardContainer">
             <div>

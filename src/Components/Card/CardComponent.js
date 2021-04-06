@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Button, Container, Row } from 'react-bootstrap'
+import { Card, Button, Container, Row, Spinner } from 'react-bootstrap'
 import "./CardComponent.scss"
 import { useState, useEffect } from "react";
 import fetchData from "../../helpers/fetchData";
@@ -54,7 +54,20 @@ export default function CardComponent() {
                     </form>
                 </Container>
             </div>
-            <div className="AllCards">
+            {characters.length === 0
+            ?
+            <Button variant="danger" disabled>
+                <Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+                />
+                  Heroes Loading...
+            </Button>
+            :
+                <div className="AllCards">
                 {characters[1] && (
                     <>
                         <Card className="cards" style={{ width: '11rem', height: "360px" }}>
@@ -100,7 +113,7 @@ export default function CardComponent() {
                     </>
                 )
                 }
-            </div>
+            </div>}
         </div>
 
 

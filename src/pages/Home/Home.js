@@ -8,6 +8,14 @@ import HomeCarousels from '../../Components/HomeCarousels/HomeCarousels'
 import { Animated } from "react-animated-css";
 import Footer from "../Footer/Footer";
 
+  // useEffect(()=>{
+    //     handleGetData().then((data)=>setData(data ? data : []))
+    // },[force])
+    // const handleLike = async () =>{
+    //     await handleSetData([...data, {id: "123", like: 250}])
+    //     setForce(force + 1)
+    // }
+
 const Home = () => {
     return (
         <div>

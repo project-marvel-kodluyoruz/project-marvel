@@ -1,6 +1,9 @@
 import './App.scss';
 import Register from "./pages/Register/Register"
 import Login from "./pages/Login/Login"
+import Home from "./pages/Home/Home"
+import NavbarComponents from "./Components/Navbar/Nav"
+import Footer from './pages/Footer/Footer'
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,9 +12,6 @@ import {
 import {useDispatch} from "react-redux"
 import firebase from "firebase"
 import "firebase/auth";
-import fetchData from "./helpers/fetchData"
-import {useState} from "react"
-import Home from "./pages/Home/Home"
 
 var firebaseConfig = {
   apiKey: process.env.REACT_APP_AUTH_API_KEY,
@@ -23,10 +23,8 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-
 function App() {
   const dispatch = useDispatch()
-  
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -36,15 +34,19 @@ function App() {
     }
   });
 
-  
+  // <button onClick={()=>fetchData("characters", "1011334", "series").then(data=>setData(data))}>Fetch Data</button>
   return (
+    <div className="App">
+      <NavbarComponents/>      
       <Router>
        <Switch>
-          <Route path="/" component={Home}/>
           <Route path="/register" component={Register}/>
           <Route path="/login" component={Login}/>
+          <Route exact path="/" component={Home}/>
         </Switch>
       </Router>
+      <Footer/>
+    </div>
   );
 }
 

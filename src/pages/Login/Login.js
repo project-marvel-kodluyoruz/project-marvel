@@ -3,6 +3,7 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import "./Login.scss";
 
+
 const Login = () => {
   let schema = yup.object().shape({
     password: yup
@@ -15,7 +16,10 @@ const Login = () => {
     <div className="login-body">
       <div className="login-form-container">
         <div className="login-form-background">
-          <img className="login-form-background-image" src="https://p4.wallpaperbetter.com/wallpaper/442/315/805/marvel-comics-logo-captain-america-wallpaper-preview.jpg" alt="" />
+          {/* <img className="login-form-background-image" 
+           src="https://p4.wallpaperbetter.com/wallpaper/442/315/805/marvel-comics-logo-captain-america-wallpaper-preview.jpg" 
+           alt="" 
+          /> */}
           <Formik
             initialValues={{ email: "", password: ""}}
             validationSchema={schema}

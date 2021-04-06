@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Card, Button, Container, Row, Spinner } from 'react-bootstrap'
 import "./CardComponent.scss"
 import { useState, useEffect } from "react";
@@ -16,7 +16,7 @@ export default function CardComponent() {
         fetchData("characters", "", "", "").then(data => {
             setCharacters(data);
         })
-    }, [inputCharacter]);
+    }, []);
     console.log(characters)
     return (
         <div className="CardContainer">

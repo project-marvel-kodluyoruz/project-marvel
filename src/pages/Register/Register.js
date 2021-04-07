@@ -19,6 +19,7 @@ const Register = () => {
       .string()
       .required("Please enter your password")
       .oneOf([yup.ref("password"), null], "Passwords must match"),
+    displayName: yup.string().required()
   });
   return (
     <div className="register-body">
@@ -27,10 +28,10 @@ const Register = () => {
         <img className="form-background-image" src="https://www.enjpg.com/img/2020/iron-man-8-scaled.jpg" alt="" />
         <p className="accordion-button" onClick={() => setShow((s) => !s)}> {show ? "-" : "+"}</p>
         <Formik
-          initialValues={{ email: "", password: "", confirmPassword: "" }}
+          initialValues={{ displayName: "", email: "", password: "", confirmPassword: "" }}
           validationSchema={schema}
           onSubmit={(values, { setSubmitting }) => {
-            register(values.email.toLowerCase().trim(), values.password);
+            register(values.email.toLowerCase().trim(), values.password, values.displayName.trim().toLowerCase());
             setSubmitting(false);
             history.push("/")
           }}>
@@ -47,6 +48,15 @@ const Register = () => {
           }) =>
             show && (
               <form onSubmit={handleSubmit} className="register-form">
+                <input
+                  type="displayName"
+                  name="displayName"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.displayName}
+                  placeholder="Please enter your user name"
+                  className="register-input" />
+                <span className="register-span">{errors.displayName && touched.displayName && errors.displayName}</span>
                 <input
                   type="email"
                   name="email"

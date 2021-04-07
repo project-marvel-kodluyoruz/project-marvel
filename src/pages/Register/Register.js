@@ -3,8 +3,11 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import "./Register.scss";
 import { useState } from "react";
+import {useHistory} from "react-router-dom"
+
 
 const Register = () => {
+  const history = useHistory()
   const [show, setShow] = useState(true);
   let schema = yup.object().shape({
     password: yup
@@ -29,6 +32,7 @@ const Register = () => {
           onSubmit={(values, { setSubmitting }) => {
             register(values.email.toLowerCase().trim(), values.password);
             setSubmitting(false);
+            history.push("/")
           }}>
 
           {({

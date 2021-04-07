@@ -1,4 +1,4 @@
-import react from "react"
+import React from "react"
 import './Home.scss';
 import CharacterPages from '../CharacterPages/CharacterPages'
 import ComicsPage from '../Comics/Comics'

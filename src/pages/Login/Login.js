@@ -2,9 +2,11 @@ import {login, logout} from "../../authentication/Authentication";
 import { Formik } from "formik";
 import * as yup from "yup";
 import "./Login.scss";
+import {useHistory} from "react-router-dom"
 
 
 const Login = () => {
+  const history = useHistory()
   let schema = yup.object().shape({
     password: yup
       .string()
@@ -26,6 +28,7 @@ const Login = () => {
             onSubmit={(values, { setSubmitting }) => {
               login(values.email.toLowerCase().trim(), values.password);
               setSubmitting(false);
+              history.push("/")
             }}>
 
             {({

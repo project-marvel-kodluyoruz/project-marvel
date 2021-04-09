@@ -13,10 +13,11 @@ const Card = ({ item }) => {
     setFavs(JSON.parse(localStorage.getItem('favsComics')) || [])
   }, [force2])
 
-  const handleFavourite = (comicsItem) => {
+  const handleFavourite = (item) => {
     if (user) {
-      localStorage.setItem('favsComics', JSON.stringify([...favs, comicsItem]))
+      localStorage.setItem('favsComics', JSON.stringify([item, ...favs]))
       setForce2(force2 + 1)
+      console.log(item)
     } else {
       alert("You must login, after you login try again")
     }

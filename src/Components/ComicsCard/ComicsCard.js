@@ -10,18 +10,15 @@ const Card = ({ item }) => {
   const user = useSelector(state => state.userId)
 
   useEffect(() => {
-    setFavs(JSON.parse(localStorage.getItem('favs')) || [])
+    setFavs(JSON.parse(localStorage.getItem('favsComics')) || [])
   }, [force2])
 
-  const handleFavourite = (item) => {
+  const handleFavourite = (comicsItem) => {
     if (user) {
-      localStorage.setItem('favs', JSON.stringify([...favs, item]))
+      localStorage.setItem('favsComics', JSON.stringify([...favs, comicsItem]))
       setForce2(force2 + 1)
     } else {
-  //     <Alert variant='primary'>
-  //       Lütfen giriş yapınız!
-  // </Alert>
-      alert('Lütfen giriş yapınız!')
+      alert("You must login, after you login try again")
     }
   }
 

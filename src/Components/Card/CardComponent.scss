@@ -33,7 +33,7 @@
             }
 
             Img {
-                border: 1px solid white;
+                border: 2px solid white;
                 border-radius: 15px;
                 margin-top: 1rem;
                 width: 60%;
@@ -42,10 +42,13 @@
         }
     
         button {
-            width: 110px;
+            width: 55px;
             height: 40px;
             padding-top: 4px;
+            padding: 0px;
+            margin-right: 5px;
         }
+       
     }
-    
+
 }

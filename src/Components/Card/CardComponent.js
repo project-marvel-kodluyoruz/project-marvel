@@ -91,7 +91,7 @@ export default function CardComponent() {
         : <div className='AllCards'>
           {!inputCharacter && characters[1] && (
             <>
-              <Card className='cards' style={{ width: '11rem' }}>
+              <Card className='cards' style={{ width: '11.5rem' }}>
                 <Card.Img variant='top' src={`${characters[573].thumbnail.path}.${characters[573].thumbnail.extension}`} />
                 <Card.Body>
                   <Card.Title className='cardTitle'>{characters[573].name}</Card.Title>
@@ -101,7 +101,7 @@ export default function CardComponent() {
                   <Button onClick={() => handleFavourite(characters[573])} variant='secondary'>Fav</Button>
                 </Card.Body>
               </Card>
-              <Card className='cards' style={{ width: '11rem' }}>
+              <Card className='cards' style={{ width: '11.5rem' }}>
                 <Card.Img variant='top' src={`${characters[1193].thumbnail.path}.${characters[1193].thumbnail.extension}`} />
                 <Card.Body>
                   <Card.Title className='cardTitle'>{characters[1185].name}</Card.Title>
@@ -111,7 +111,7 @@ export default function CardComponent() {
                   <Button onClick={() => handleFavourite(characters[1185])} variant='secondary'>Fav</Button>
                 </Card.Body>
               </Card>
-              <Card className='cards' style={{ width: '11rem' }}>
+              <Card className='cards' style={{ width: '11.5rem' }}>
                 <Card.Img variant='top' src={`${characters[188].thumbnail.path}.${characters[188].thumbnail.extension}`} />
                 <Card.Body>
                   <Card.Title className='cardTitle'>{characters[185].name}</Card.Title>
@@ -121,7 +121,7 @@ export default function CardComponent() {
                   <Button onClick={() => handleFavourite(characters[185])} variant='secondary'>Fav</Button>
                 </Card.Body>
               </Card>
-              <Card className='cards' style={{ width: '11rem' }}>
+              <Card className='cards' style={{ width: '11.5rem' }}>
                 <Card.Img variant='top' src={`${characters[1316].thumbnail.path}.${characters[4].thumbnail.extension}`} />
                 <Card.Body>
                   <Card.Title className='cardTitle'>{characters[1311].name}</Card.Title>
@@ -131,7 +131,7 @@ export default function CardComponent() {
                   <Button onClick={() => handleFavourite(characters[1311])} variant='secondary'>Fav</Button>
                 </Card.Body>
               </Card>
-              <Card className='cards' style={{ width: '11rem' }}>
+              <Card className='cards' style={{ width: '11.5rem' }}>
                 <Card.Img variant='top' src={`${characters[297].thumbnail.path}.${characters[297].thumbnail.extension}`} />
                 <Card.Body>
                   <Card.Title className='cardTitle'>{characters[297].name}</Card.Title>
@@ -159,13 +159,13 @@ export default function CardComponent() {
               )
               .map((item, i) => {
                 return (
-                  <div className>
+                  <div className="mapFav">
                     <Card className='cards' style={{ width: '11rem', height: 'auto' }}>
                       <Card.Img variant='top' src={`${item.thumbnail.path}.${item.thumbnail.extension}`} />
                       <Card.Body>
                         <Card.Title className='cardTitle'>{item.name}</Card.Title>
                         <Button variant='primary'>Go</Button>
-                        <i onClick={() => handleLike(item.id)} class='fas fa-heart' />
+                        <i id="fav" onClick={() => handleLike(item.id)} class='fas fa-heart' />
                         <sup><Badge>{data[`${item.id}`] ? data[`${item.id}`]['like'] : 0}</Badge></sup>
                         <Button onClick={() => handleFavourite(item)} variant='secondary'>Fav</Button>
                       </Card.Body>

@@ -45,7 +45,7 @@ export default function NavbarComponents() {
                     <>
                     <Nav.Link className="NavText" onClick={handleLogOut}>LOGOUT</Nav.Link>
                     <Nav.Link className="NavText user-name">{user.displayName[0].toUpperCase()}{user.displayName.slice(1)}</Nav.Link>
-                    <Image className="avatar" src="https://static.wikia.nocookie.net/marvelcinematicuniverse/images/3/36/Captain_America_Shield.png/revision/latest/scale-to-width-down/310?cb=20190316204818" roundedCircle />
+                    <Image className="avatar" src="https://static.wikia.nocookie.net/marvelmovies/images/3/36/Captain_America_Shield.png/revision/latest?cb=20150210041846" roundedCircle />
                     </>
                     }
                 </Form>

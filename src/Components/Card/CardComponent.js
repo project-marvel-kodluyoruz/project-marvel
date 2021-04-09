@@ -60,7 +60,6 @@ export default function CardComponent() {
   } else {
     alert("You must login, after you login try again")
   }
-
   }
 
   return (

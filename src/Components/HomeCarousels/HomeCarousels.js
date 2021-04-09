@@ -23,13 +23,13 @@ function ControlledCarousel() {
           <ReactPlayer
             width='1000px'
             height="540px"
-            url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+            url='https://www.youtube.com/watch?v=TcMBFSGVi1c' />
         </Carousel.Item>
         <Carousel.Item>
           <ReactPlayer
             width='1000px'
             height="540px"
-            url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+            url='https://www.youtube.com/watch?v=nW948Va-l10' />
         </Carousel.Item>
       </Carousel>
     </div >

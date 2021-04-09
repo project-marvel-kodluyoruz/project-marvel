@@ -29,10 +29,9 @@ const Card = ({ item }) => {
         <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} />
         <figcaption>
           <h3>see details...</h3>
-          <Button>Ekle</Button>
         </figcaption><a href={item.urls[0].url} />
       </figure>
-      <Button onClick={() => handleFavourite(item)} variant='secondary'>Fav</Button>
+      <Button className="button"onClick={() => handleFavourite(item)} variant='secondary'>Add Fav</Button>
       <h3>{item.title}</h3>
       {/* {item.creators.items.map((data) => <h5>{data.name}</h5>)} */}
       {  item.creators.items[0] && <h5>{item.creators.items[0].name}</h5>}

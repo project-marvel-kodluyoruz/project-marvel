@@ -12,6 +12,7 @@ import {
 import {useDispatch} from "react-redux"
 import firebase from "firebase"
 import "firebase/auth";
+import Profile from './pages/Profile/Profile';
 
 var firebaseConfig = {
   apiKey: process.env.REACT_APP_AUTH_API_KEY,
@@ -42,6 +43,7 @@ function App() {
        <Switch>
           <Route path="/register" component={Register}/>
           <Route path="/login" component={Login}/>
+          <Route path="/profile" component={Profile}/>
           <Route exact path="/" component={Home}/>
         </Switch>
        </Router>

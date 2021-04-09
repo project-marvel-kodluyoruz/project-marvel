@@ -2,11 +2,12 @@ import { Navbar, Nav, Form, FormControl, Image } from 'react-bootstrap'
 import "./Navbar.scss"
 import React from 'react'
 import { Animated } from "react-animated-css";
-import {useHistory} from "react-router-dom"
+import {useHistory, useLocation} from "react-router-dom"
 import {useSelector} from "react-redux"
 import {logout} from "../../authentication/Authentication"
 
 export default function NavbarComponents() {
+    const url = useLocation()
     const history = useHistory()
     const user = useSelector(state => state.userId)
     const handleRoute = (event) => {
@@ -16,7 +17,6 @@ export default function NavbarComponents() {
         logout()
         history.push("/")
     }
-    console.log(user)
     return (
         <div className="NavbarComponent">
             
@@ -24,9 +24,15 @@ export default function NavbarComponents() {
                 <Navbar.Brand href="#home">A TEAM</Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link className="NavText" name="" onClick={handleRoute}>Home</Nav.Link>
+                    {
+                    url.pathname === "/"
+                    &&
+                    <>
                     <Nav.Link className="NavText" href="#CharacterPages">Characters</Nav.Link>
                     <Nav.Link className="NavText" href="#ComicsPage">Comics</Nav.Link>
                     <Nav.Link className="NavText" href="#pricing">Movies</Nav.Link>
+                    </>
+                    }
                 </Nav>
                 <Form inline>
                     {!user

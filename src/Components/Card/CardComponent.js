@@ -1,11 +1,10 @@
 import React, {useState, useEffect } from 'react'
-import { Card, Button, Badge, Container, Row, Spinner } from 'react-bootstrap'
+import { Card, Button, Badge, Container, Spinner } from 'react-bootstrap'
 import './CardComponent.scss'
 import handleGetData from '../../helpers/handleGetData'
 import handleSetData from '../../helpers/handleSetData'
 
 import fetchData from '../../helpers/fetchData'
-import { Animated } from 'react-animated-css'
 import { useSelector } from 'react-redux'
 
 
@@ -44,8 +43,12 @@ export default function CardComponent() {
   }, [force])
   const handleLike = async (id) => {
     const stringId = id.toString()
-    await handleSetData({ ...data, [id]: { "like": data[id] ? (data[id]["like"] + 1) : 1 } })
-    setForce(force + 1)
+    if (user){
+      await handleSetData({ ...data, [stringId]: { "like": data[stringId] ? (data[stringId]["like"] + 1) : 1 } })
+      setForce(force + 1)
+    }else{
+      alert("You must login, after you login try again")
+    }
   }
 
   const handleFavourite = (item) => {
@@ -53,7 +56,7 @@ export default function CardComponent() {
     localStorage.setItem('favs', JSON.stringify([...favs, item]))
     setForce2(force2 + 1)
   } else {
-    
+    alert("You must login, after you login try again")
   }
 
   }

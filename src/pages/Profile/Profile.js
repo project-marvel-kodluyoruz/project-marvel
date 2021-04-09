@@ -13,20 +13,21 @@ const Profile = () => {
 
   return (
     <div className="profile">
-      <div className="my-characters">
+      <div className="my-all-characters">
         <h5>my characters</h5>
         {
           favs.map((item) => {
             return (
-            <>
-              <Card className='cards' style={{ width: '11rem', height: 'auto' }}>
-                <Card.Img variant='top' src={`${item.thumbnail.path}.${item.thumbnail.extension}`} />
-                <Card.Body>
-                  <Card.Title className='cardTitle'>{item.name}</Card.Title>
-                  <Button variant='primary'>Go</Button>
-                </Card.Body>
-              </Card>
-              </>)
+              <>
+                <Card className='cards' style={{ width: '11rem', height: 'auto' }}>
+                  <Card.Img variant='top' src={`${item.thumbnail.path}.${item.thumbnail.extension}`} />
+                  <Card.Body>
+                    <Card.Title className='cardTitle'>{item.name}</Card.Title>
+                    <Button variant='primary'>Go</Button>
+                  </Card.Body>
+                </Card>
+              </>
+            )
           })
         }
       </div>

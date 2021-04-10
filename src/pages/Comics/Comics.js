@@ -11,7 +11,7 @@ const Comics = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    fetchData('comics', '', '', '15').then(data => setData(data))
+    fetchData('comics', '', '', '30').then(data => setData(data))
   }, [])
   console.log(data)
 

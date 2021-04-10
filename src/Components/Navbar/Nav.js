@@ -2,7 +2,7 @@ import { Navbar, Nav, Form, FormControl, Image } from 'react-bootstrap'
 import "./Navbar.scss"
 import React from 'react'
 import { Animated } from "react-animated-css";
-import {useHistory, useLocation} from "react-router-dom"
+import {Link, useHistory, useLocation} from "react-router-dom"
 import {useSelector} from "react-redux"
 import {logout} from "../../authentication/Authentication"
 
@@ -30,7 +30,7 @@ export default function NavbarComponents() {
                     <>
                     <Nav.Link className="NavText" href="#CharacterPages">Characters</Nav.Link>
                     <Nav.Link className="NavText" href="#ComicsPage">Comics</Nav.Link>
-                    <Nav.Link className="NavText" href="#pricing">Movies</Nav.Link>
+                    <Nav.Link onClick={()=> alert('coming soon...')} className="NavText" href="#pricing">Movies</Nav.Link>
                     </>
                     }
                 </Nav>
@@ -43,9 +43,9 @@ export default function NavbarComponents() {
                     </>
                     :
                     <>
-                    <Nav.Link className="NavText" onClick={handleLogOut}>LOGOUT</Nav.Link>
-                    <Nav.Link className="NavText user-name">{user.displayName[0].toUpperCase()}{user.displayName.slice(1)}</Nav.Link>
+                    <Nav.Link className="NavText user-name"><Link to={{pathname: "/profile"}}>{user.displayName[0].toUpperCase()}{user.displayName.slice(1)}</Link></Nav.Link>
                     <Image className="avatar" src="https://static.wikia.nocookie.net/marvelmovies/images/3/36/Captain_America_Shield.png/revision/latest?cb=20150210041846" roundedCircle />
+                    <Nav.Link className="NavText" onClick={handleLogOut}>Sign Out</Nav.Link>
                     </>
                     }
                 </Form>

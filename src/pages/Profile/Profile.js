@@ -1,4 +1,4 @@
-import { Button, Container, Nav, Navbar } from 'react-bootstrap'
+import { Button, Container, Modal } from 'react-bootstrap'
 import React, { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap'
 import profilePhoto from './pp.jpg'
@@ -14,9 +14,10 @@ const Profile = () => {
   const [characterCheck, setCharacterCheck] = useState(true)
   const [comicsCheck, setComicsCheck] = useState(false)
   const user = useSelector(state => state.userId)
-  console.log(user)
-  console.log(user.displayName)
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     setFavs(JSON.parse(localStorage.getItem('favs')) || [])
@@ -30,7 +31,7 @@ const Profile = () => {
       <div className="profile">
         <div className="nav-profile">
           <div className="pp">
-            <img src={profilePhoto} />
+            <img src={profilePhoto} alt="" />
             <p>{user.displayName}</p>
           </div>
           <h5
@@ -43,8 +44,8 @@ const Profile = () => {
             onClick={() => { setCharacterCheck(false); setComicsCheck(true) }}>
             My Comics
           </h5>
-          <h5 onClick={()=> alert('coming soon...')}>My Movies</h5>
-          <h5 onClick={()=> alert('coming soon...')}>My Marvel Friends</h5>
+          <h5 onClick={handleShow}>My Movies</h5>
+          <h5 onClick={handleShow}>My Marvel Friends</h5>
           <h5><a href='https://www.shopdisney.com/marvel-content/'> Let's shop </a></h5>
 
         </div>
@@ -91,6 +92,17 @@ const Profile = () => {
           </Container>
         }
       </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Coming Soon...</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>There is a woking on this page.</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import handleSetData from '../../helpers/handleSetData'
 
 import fetchData from '../../helpers/fetchData'
 import { useSelector } from 'react-redux'
+import AlertModal from "../AlertModal/AlertModal"
 
 
 
@@ -17,6 +18,7 @@ export default function CardComponent() {
   const [force2, setForce2] = useState(0)
   const [favs, setFavs] = useState([])
   const user = useSelector(state => state.userId)
+  const [modalShow, setModalShow] = useState(false);
   // let value = inputCharacter;
   // const characterNumber = Math.ceil(Math.random() * 100).toString()
 
@@ -47,7 +49,7 @@ export default function CardComponent() {
       await handleSetData({ ...data, [stringId]: { "like": data[stringId] ? (data[stringId]["like"] + 1) : 1 } })
       setForce(force + 1)
     }else{
-      alert("You must login, after you login try again")
+      setModalShow(true)
     }
   }
 
@@ -56,7 +58,7 @@ export default function CardComponent() {
     localStorage.setItem('favs', JSON.stringify([...favs, item]))
     setForce2(force2 + 1)
   } else {
-    alert("You must login, after you login try again")
+    setModalShow(true)
   }
   }
 
@@ -98,7 +100,7 @@ export default function CardComponent() {
                 <Card.Body>
                   <Card.Title className='cardTitle'>{characters[573].name}</Card.Title>
                   <Button variant='primary'>Go</Button>
-                  <i onClick={() => handleLike(573)} class='fas fa-heart' />
+                  <i onClick={() => handleLike(573)} className='fas fa-heart' />
                   <sup><Badge>{data[`573`] ? data[`573`]['like'] : 0}</Badge></sup>
                   <Button onClick={() => handleFavourite(characters[573])} variant='secondary'>Fav</Button>
                 </Card.Body>
@@ -178,6 +180,7 @@ export default function CardComponent() {
           </div>
         )}
       </div>
+      <AlertModal show={modalShow} onHide={() => setModalShow(false)} />
     </div>
 
   )

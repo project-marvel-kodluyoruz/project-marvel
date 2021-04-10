@@ -96,7 +96,7 @@ const Profile = () => {
         <Modal.Header closeButton>
           <Modal.Title>Coming Soon...</Modal.Title>
         </Modal.Header>
-        <Modal.Body>There is a woking on this page.</Modal.Body>
+        <Modal.Body>There is a working on this page.</Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleClose}>
             Close
